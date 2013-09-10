@@ -114,7 +114,23 @@
             XVimMakeTestCase(text2, 0,  0, @"Vjlvd", v_d_result, 0, 0), // change in visual
             XVimMakeTestCase(text2, 0,  0, @"vlljj<C-v>d", C_v_d_result, 0, 0), // change in visual
             
+            // Text objects in visual mode
+            // In Visual Character
+            // forward
+            XVimMakeTestCase(text2, 5,  0, @"vaw", text2, 4, 4), // change in visual
+            XVimMakeTestCase(text2, 5,  0, @"viw", text2, 4, 3), // change in visual
+            XVimMakeTestCase(text2, 5,  0, @"vjaw", text2, 5, 15), // change in visual
+            XVimMakeTestCase(text2, 5,  0, @"vjiw", text2, 5, 14), // change in visual
+            XVimMakeTestCase(text2, 5,  0, @"vjjhhaw", text2, 5, 27), // change in visual
+            XVimMakeTestCase(text2, 5,  0, @"vjjhhiw", text2, 5, 26), // change in visual
+            // backward
+            XVimMakeTestCase(text2, 24,  0, @"vkaw", text2, 15, 15), // change in visual
+            XVimMakeTestCase(text2, 24,  0, @"vkiw", text2, 16, 14), // change in visual
+            XVimMakeTestCase(text2, 24,  0, @"vkkllaw", text2, 3, 27), // change in visual
+            XVimMakeTestCase(text2, 24,  0, @"vkklliw", text2, 4, 26), // change in visual
+
             
+            // Visual Line selection goes into Visual Character selection with text object
             nil];
 }
 @end
